@@ -36,8 +36,8 @@ const showCharacter = async id => {
     speciesEl.textContent = 'Species: ' + character.species;
     imageEl.style.minWidth = `${nameEl.getClientRects()[0].width + 12}px`;
   } catch (err) {
-    alert(err.message);
     console.log(err);
+    alert(err.message);
   }
 };
 
@@ -47,7 +47,10 @@ const showRandChar = () => {
       const randId = Math.floor(Math.random() * count) + 1;
       showCharacter(randId);
     })
-    .catch(err => alert(err.message));
+    .catch(err => {
+      console.log(err);
+      alert(err.message);
+    });
 };
 
 randBtn.addEventListener('click', showRandChar);
