@@ -9,15 +9,11 @@ const randBtn = document.querySelector('.btn');
 const apiUrl = 'https://rickandmortyapi.com/api/character';
 
 const getJsonData = async url => {
-  try {
-    const response = await fetch(url);
-    if (response.ok) {
-      return await response.json();
-    } else {
-      throw new Error('Failed to get JSON-data.');
-    }
-  } catch (err) {
-    throw err;
+  const response = await fetch(url);
+  if (response.ok) {
+    return await response.json();
+  } else {
+    throw new Error('Failed to get JSON-data.');
   }
 };
 
