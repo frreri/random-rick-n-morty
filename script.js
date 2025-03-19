@@ -17,7 +17,7 @@ const getJsonData = async url => {
       throw new Error('Failed to get JSON-data.');
     }
   } catch (err) {
-    throw new Error('Unable to reach target URL');
+    throw err;
   }
 };
 
